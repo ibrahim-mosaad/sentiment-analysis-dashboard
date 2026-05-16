@@ -12,10 +12,10 @@ from preprocess import clean_text
 data = pd.read_csv("data/dataset.csv")
 
 # Keep needed columns
-data = data[['text', 'sentiment']]
+data = data[['review', 'sentiment']]
 
 # Clean text
-data['clean_text'] = data['text'].apply(clean_text)
+data['clean_text'] = data['review'].apply(clean_text)
 
 # Features & labels
 X = data['clean_text']
